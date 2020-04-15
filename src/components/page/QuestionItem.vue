@@ -781,7 +781,12 @@
 
             // 创建时间格式化
             timeFormat(row, column) {
-                return Utils.strToDateStr(new Date(row.createTime));
+
+                let time = row.createTime;
+                if (!time){
+                    return null;
+                }
+                return Utils.strToDateStr(new Date(time));
             },
             beforeUploadExcel(file) {
                 return Utils.limitUpdateFileSize(file, globalConfig.maxExcelFileSize, this);

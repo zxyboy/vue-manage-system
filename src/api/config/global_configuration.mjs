@@ -5,8 +5,8 @@
  * @type {{baseURI: string, host: string}}
  */
 const globalConfig = {
-    imageHost : "http://q70sn7327.bkt.clouddn.com/",
-    host: "http://localhost:9999/",
+    imageHost : "http://duokao.elfgirl.top/",
+    host: "http://localhost:8080/",
     baseURI: "graphql",
     userInfo: "user_info",
     username: "t_username",

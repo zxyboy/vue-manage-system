@@ -261,11 +261,11 @@
                         <el-table-column prop="scores" label="得分" width="60px">
                             <template slot-scope="scope">{{scope.row.scores ? scope.row.scores : 0}}</template>
                         </el-table-column>
-                        <el-table-column prop="userTotalTime" label="考试用时" :formatter="totalTimeFormat" width="80px"></el-table-column>
+                        <el-table-column prop="userTotalTime" label="考试用时" :formatter="totalTimeFormat"
+                                         width="80px"></el-table-column>
                         <el-table-column prop="examStartTime" label="考试开始时间" :formatter="timeFormat"></el-table-column>
                         <el-table-column prop="examEndTime" label="考试结束时间" :formatter="timeFormat"></el-table-column>
                         <el-table-column prop="checkUser.nickname" label="批改人"></el-table-column>
-
 
 
                         <el-table-column prop="examStartCheckTime" label="批改开始时间"
@@ -403,10 +403,19 @@
             // 创建时间格式化
             timeFormat(row, column) {
                 let property = column.property;
-                return Utils.strToDateStr(row[property]);
+
+                let dateStr = row[property];
+                if (!dateStr) {
+                    return null;
+                }
+                return Utils.strToDateStr(dateStr);
             },
             timeDeadlineFormat(row, column) {
                 let property = column.property;
+                let dateStr = row[property];
+                if (!dateStr) {
+                    return null;
+                }
                 return Utils.strToDateStr(row[property], "yyyy-MM-dd");
             },
             userPaperStatusFormat(row, column) {
