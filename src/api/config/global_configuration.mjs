@@ -6,7 +6,7 @@
  */
 const globalConfig = {
     imageHost : "http://duokao.elfgirl.top/",
-    host: "http://localhost:8080/",
+    host: "http://152.136.233.197:8080/",
     baseURI: "graphql",
     userInfo: "user_info",
     username: "t_username",
